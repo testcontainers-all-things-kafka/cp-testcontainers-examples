@@ -1,0 +1,45 @@
+plugins {
+  id 'java'
+}
+
+apply plugin: 'maven-publish'
+
+group = 'com.github.testcontainers-all-things-kafka'
+version = '0.1.0-SNAPSHOT'
+
+sourceCompatibility = 1.11
+
+repositories {
+  mavenCentral()
+
+  maven {
+    url 'https://packages.confluent.io/maven'
+  }
+}
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+
+dependencies {
+  implementation 'ch.qos.logback:logback-classic:1.2.11'
+  testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+  testImplementation 'org.assertj:assertj-core:3.22.0'
+  testImplementation 'com.github.christophschubert:cp-testcontainers:master-SNAPSHOT'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+  testLogging {
+    outputs.upToDateWhen { false }
+    showStandardStreams = false
+    events "passed", "skipped", "failed"
+    exceptionFormat "full"
+  }
+}
