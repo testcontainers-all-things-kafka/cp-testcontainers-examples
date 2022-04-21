@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "10:00"
+    # Add reviewers
+    reviewers:
+      - "gamussa"
+      - "christophschubert"
+    open-pull-requests-limit: 10

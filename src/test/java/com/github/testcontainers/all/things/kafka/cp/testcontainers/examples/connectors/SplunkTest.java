@@ -1,4 +1,4 @@
-package com.github.testcontainers.all.things.kafka.cp.testcontainers.examples;
+package com.github.testcontainers.all.things.kafka.cp.testcontainers.examples.connectors;
 
 import net.christophschubert.cp.testcontainers.CPTestContainerFactory;
 import net.christophschubert.cp.testcontainers.util.ConnectClient;
