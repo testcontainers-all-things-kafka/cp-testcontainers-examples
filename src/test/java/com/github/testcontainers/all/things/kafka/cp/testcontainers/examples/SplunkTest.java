@@ -6,6 +6,7 @@ import net.christophschubert.cp.testcontainers.util.ConnectorConfig;
 import net.christophschubert.cp.testcontainers.util.TestClients;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.KafkaContainer;
@@ -83,6 +84,7 @@ public class SplunkTest {
 
 
   @Test
+  @Disabled("need to bring a custom connector here somehow")
   public void startSplunkCustomConnector() throws InterruptedException, IOException {
     final Network network = Network.newNetwork();
 
