@@ -7,12 +7,11 @@ docker_builder:
   version_script:
     - java -version
     - docker --version
-  build_script: ./gradlew build -x integrationTest --stacktrace
+  build_script: ./gradlew clean -xtest assemble
   cleanup_before_cache_script:
     - rm -rf ~/.gradle/caches/transforms-1
     - rm -rf ~/.gradle/caches/journal-1
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
-  integration_tests_script: ./gradlew integrationTest --stacktrace --info
   other_tests_script: ./gradlew test --stacktrace --info
   always:
     junit_artifacts:
