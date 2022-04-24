@@ -47,7 +47,7 @@ dependencies {
   testCompileOnly 'org.projectlombok:lombok:1.18.24'
   testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
   
-  testImplementation 'com.github.christophschubert:cp-testcontainers:master-SNAPSHOT'
+  testImplementation 'com.github.christophschubert:cp-testcontainers:v0.1.0'
   //TODO: use cp-testcontainers plugin `java-library` 
   implementation "org.testcontainers:testcontainers:$testContainerVersion"
   implementation "org.testcontainers:kafka:$testContainerVersion"
