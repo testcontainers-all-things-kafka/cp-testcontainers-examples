@@ -30,6 +30,12 @@ allprojects {
   }
 }
 
+ext {
+  confluentVersion = '7.0.1'
+  kafkaVersion = '3.1.0'
+  testContainerVersion = '1.17.1'
+}
+
 dependencies {
   implementation "org.apache.avro:avro:1.11.0"
   implementation 'ch.qos.logback:logback-classic:1.2.11'
@@ -42,6 +48,16 @@ dependencies {
   testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
   
   testImplementation 'com.github.christophschubert:cp-testcontainers:master-SNAPSHOT'
+  //TODO: use cp-testcontainers plugin `java-library` 
+  implementation "org.testcontainers:testcontainers:$testContainerVersion"
+  implementation "org.testcontainers:kafka:$testContainerVersion"
+  implementation "org.apache.kafka:connect-api:$kafkaVersion"
+  implementation "org.apache.kafka:kafka-clients:$kafkaVersion"
+
+  implementation "io.confluent:kafka-avro-serializer:$confluentVersion"
+
+  //end TODO
+
 }
 
 test {
