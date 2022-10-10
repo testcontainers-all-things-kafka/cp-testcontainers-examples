@@ -38,7 +38,7 @@ ext {
 
 dependencies {
   implementation "org.apache.avro:avro:1.11.0"
-  implementation 'ch.qos.logback:logback-classic:1.2.11'
+  implementation 'ch.qos.logback:logback-classic:1.4.4'
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
   testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
   testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
